@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcial 1_Punto-2</title>
+
+    <style>
+        *, *::after, *::before{
+            box-sizing: border-box;
+        }
+
+        header{
+            float: left;
+            width: 100%;
+            text-align: center;
+            background-color: pink;
+            color: white;
+            margin-bottom: 5px;
+            padding: 10px;
+        }
+
+        aside{
+            float: left;
+            width: 10%;
+            background-color: aliceblue;
+            margin-left: 25%;
+            margin-top: 15px;
+            height: 500px;
+        }
+
+        nav{
+            float: left;
+            width: 20%;
+            background-color: grey;
+            height: 500px;
+            margin-top: 15px;
+        }
+
+        div{
+            float: left;
+            width: 30%;
+            padding-left: 10px;
+            height: 600px;
+            margin-top: 15px;
+            margin-left: 5px;
+        }
+
+        article {
+            padding-bottom: 10px;
+            padding-left: 5px;
+            margin-bottom: 20px;
+            background-color: aliceblue;
+        }
+
+        .punto2{
+            background-color: black;
+            color: white;
+            text-align: center;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        footer{
+            float: left;
+            padding: 10px;
+            color: white;
+            background-color: black;
+            text-align: center;
+            width: 100%;
+        }
+
+        .noticia1{
+            margin-bottom: 20px;
+        }
+      
+        .noticia2{
+            margin-top: 50px;
+        }
+
+        .ultfooter{
+            background-color: black;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>PARCIAL 1</h1>
+    </header>
+
+    <main>
+
+        <aside>
+             <h1>Aside</h1>
+             <p>Informacion no tan relevante</p>
+        </aside>
+
+        <nav>
+            <h1>Men&uacute; vertical</h1>
+
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#articulo1">Artucilo 1</a></li>
+                <li><a href="#articulo2">Articulo 2</a></li>
+                <li><a href="#articulo3">Articulo 3</a></li>
+                <li><a href="#articulo4">Articulo 4</a></li>
+            </ul>
+        </nav>
+
+        <div>
+
+            <article class="noticia1">
+                <header class="punto2">
+                    <h3>Encabezado del Articulo 1</h3>
+                </header>
+
+                <h1>Noticia 1</h1>
+                <p>Contenido del articulo 1</p>
+                <footer>Pie del articulo 1</footer>
+            </article>
+
+            <article class="noticia2">
+                <header class="punto2">
+                    <h3>Encabezado del Articulo 2</h3>
+                </header>
+
+                <h1>Noticia 2</h1>
+                <p>Contenido del articulo 2</p>
+                <footer>Pie del articulo 2</footer>
+            </article>
+        </div>
+    </main>
+
+    <footer class="ultfooter"></footer>
+
+</body>
+</html>
