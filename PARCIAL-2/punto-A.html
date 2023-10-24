@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #coloredDiv {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      transition: background-color 1s; /* Establecemos la transición para el color de fondo durante 1 segundo */
+    }
+  </style>
+</head>
+<body>
+  <div id="coloredDiv"></div>
+  <button onclick="cambiarColor();">Cambiar Color</button>
+
+  <script>
+    let div = document.getElementById("coloredDiv");
+    let colors = ["red", "blue", "green", "yellow","black"];
+    let currentIndex = 0;
+
+    function cambiarColor() {
+      currentIndex = (currentIndex + 1) % colors.length;
+      div.style.backgroundColor = colors[currentIndex];
+    }
+  </script>
+</body>
+<footer><h2><p>INTEGRANTES: 
+    MICHAEL PAPAMIJA PANTOJA -
+    DARIO RUIZ FLOREZ
+</p></h2></footer></html>

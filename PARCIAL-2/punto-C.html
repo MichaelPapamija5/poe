@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <style>
+ #cabecera{
+   width: 50px;
+   height: 50px;
+   background-color: brown;
+   position: absolute;
+   transition: top 0.2s, left 0.2s; /* Transición para la animación de movimiento */
+ }
+ </style>
+</head>
+<body>
+  <p>USAR LAS FLECHAS DE TU TECLADO PARA MOVER EL CUADRO </p>
+ <div id="cabecera"></div>
+
+ <script>
+ let cab = document.getElementById("cabecera");
+ let xPosition = 0;
+ let yPosition = 0;
+ const moveDistance = 5;
+
+ window.addEventListener("keydown", moverCuadrado);
+
+ function moverCuadrado(event){
+   switch (event.key) {
+     case "ArrowUp":
+       yPosition -= moveDistance;
+       break;
+     case "ArrowDown":
+       yPosition += moveDistance;
+       break;
+     case "ArrowLeft":
+       xPosition -= moveDistance;
+       break;
+     case "ArrowRight":
+       xPosition += moveDistance;
+       break;
+     default:
+       return; // Si no es una tecla de flecha, no hacemos nada
+   }
+
+   cab.style.left = xPosition + "px";
+   cab.style.top = yPosition + "px";
+ }
+ </script>
+</body>
+<footer><h2><p>INTEGRANTES: 
+    MICHAEL PAPAMIJA PANTOJA - 
+    DARIO RUIZ FLOREZ
+</p></h2></footer></html>
+</html>

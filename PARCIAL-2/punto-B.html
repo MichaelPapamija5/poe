@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #progressBar {
+      width: 100%;
+      height: 30px;
+      background-color: white;
+      position: relative;
+    }
+
+    #progress {
+      width: 0;
+      height: 100%;
+      background-color: greenyellow;
+      position: absolute;
+      transition: width 1s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <div id="progressBar">
+    <div id="progress"></div>
+  </div>
+  <button onclick="simularCarga();">Iniciar Carga</button>
+
+  <script>
+    function simularCarga() {
+      const progressBar = document.getElementById("progress");
+      progressBar.style.width = "100%"; // Establecemos la anchura al 100% para simular la carga
+
+      // Simulamos una carga gradual disminuyendo la anchura de la barra
+      setTimeout(function() {
+        progressBar.style.width = "0";
+      }, 2000); // Cambia la anchura en 2 segundos (puedes ajustar el tiempo según tus necesidades)
+    }
+  </script>
+</body>
+<footer><h2><p>INTEGRANTES: 
+    MICHAEL PAPAMIJA PANTOJA - 
+    DARIO RUIZ FLOREZ
+</p></h2></footer></html>
+</html>

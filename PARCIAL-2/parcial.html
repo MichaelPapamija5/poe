@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Diccionario Inglés-Español</title>
+  <style>
+    img {
+      max-width: 200px;
+      max-height: 200px;
+    }
+  </style>
+  <script>
+    // Array con las palabras en inglés, sus traducciones y enlaces a las imágenes
+    var diccionario = [
+  { palabra: "apple", traduccion: "manzana", imagen: "img/manzana.jpg" },
+  { palabra: "car", traduccion: "carro", imagen: "img/carro.jpg" },
+  { palabra: "dog", traduccion: "perro", imagen: "img/perro.jpg" },
+  { palabra: "house", traduccion: "casa", imagen: "img/casa.jpg" },
+  { palabra: "cat", traduccion: "gato", imagen: "img/gato.jpg" },
+  { palabra: "book", traduccion: "libro", imagen: "img/libro.jpg" },
+  { palabra: "tree", traduccion: "árbol", imagen: "img/arbol.jpg" },
+  { palabra: "sun", traduccion: "sol", imagen: "img/sol.jpg" },
+  { palabra: "flower", traduccion: "flor", imagen: "img/flor.jpg" },
+  { palabra: "computer", traduccion: "computadora", imagen: "img/computadora.jpg" }
+];
+      // Agrega las demás palabras aquí
+    
+    function traducirPalabra() {
+      var palabraIngles = document.getElementById("palabraIngles").value;
+      var palabraTraducida = "";
+      var imagen = "";
+      // Busca la palabra en el diccionario
+      for (var i = 0; i < diccionario.length; i++) {
+        if (diccionario[i].palabra.toLowerCase() === palabraIngles.toLowerCase()) {
+          palabraTraducida = diccionario[i].traduccion;
+          imagen = diccionario[i].imagen;
+          break;
+        }
+      }
+      // Muestra la palabra traducida y la imagen correspondiente
+      if (palabraTraducida !== "") {
+        document.getElementById("palabraTraducida").textContent = palabraTraducida;
+        document.getElementById("imagen").src = imagen;
+      } else {
+        document.getElementById("palabraTraducida").textContent = "Palabra no encontrada";
+        document.getElementById("imagen").src = "img/error.jpg";
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Diccionario Inglés-Español</h1>
+  <input type="text" id="palabraIngles" placeholder="Ingresa una palabra en inglés">
+  <button onclick="traducirPalabra()">Traducir</button>
+  <br><br>
+  <p>Palabra traducida: <span id="palabraTraducida"></span></p>
+  <img id="imagen" src="img/diccionario.jpg" alt="Imagen">
+</body>
+<footer><h2><p>INTEGRANTES: 
+  MICHAEL PAPAMIJA PANTOJA - 
+  DARIO RUIZ FLOREZ
+</p></h2></footer></html>
+</html>
