@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto 5</title>
+</head>
+<body>
+    
+    <div id="app">
+        <p>{{'Contador: ' +count}}</p>
+        <button @:click="count++">Incrementar</button>
+        <button @:click="count--">Decrementar</button>
+
+        <p v-if="count >= 1">El contador esta incrementando</p>
+        <p v-else-if="count < 0">El contador es negativo</p>
+        <p v-else="count ===0">El contador es igual a cero</p>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        count: 0  //inicializa la variable en 0
+      }
+    }
+  })
+ app.mount('#app')
+</script>
+
+
+</body>
+<footer>
+  <h2>INTEGRANTES:</h2>
+  <h3>MICHAEL ALEJANDRO PAPAMIJA PANTOJA</h3>
+  <h3>JHON FREDY GUERRA MAVISOY</h3>
+</footer>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Punto-4</title>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <button v-for="x in listFruits" :key="x.name" @click="eliminarFruta(x)">
+        <figure>
+          <img v-bind:src="x.url">
+          <figcaption>{{ x.name }}</figcaption>
+        </figure>
+      </button>
+    </ul>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+            listFruits: [
+            {name: 'Fresa', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTikLP8LsHn2D7ICBbs-arzqEWOVSVRF3Ueiw&usqp=CAU'},
+            {name: 'Papaya', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9CFYZWWlkr7brtxCCOnEvIYPgq6Ps7GzMkA&usqp=CAU'},
+            {name: 'Limon', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB-1iAh0YmNE6nmVN-FTv9iMOEo0cJYg0KKA&usqp=CAU'},
+          ]
+        };
+      },
+      methods: {
+        eliminarFruta(fruta) {
+          // Encuentra la posición de la fruta en el array
+          const index = this.listFruits.indexOf(fruta);
+          // Elimina la fruta del array
+          if (index !== -1) {
+            this.listFruits.splice(index, 1);
+          }
+        }
+      }
+    });
+
+    app.mount('#app');
+  </script>
+</body>
+<footer>
+  <h2>INTEGRANTES:</h2>
+  <h3>MICHAEL ALEJANDRO PAPAMIJA PANTOJA</h3>
+  <h3>JHON FREDY GUERRA MAVISOY</h3>
+</footer>
+</html>

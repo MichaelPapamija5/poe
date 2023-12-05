@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Punto-2</title>
+</head>
+<body>
+
+    <div id="app">
+        <input type="text" v-model="inpText">
+        <p>Ingrese texto"{{ inpText }}" </p> <!--imprime lo que ecribamos en el input-->
+      </div>
+      
+      <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+      <script>
+        const app = Vue.createApp({
+          data() {
+            return {
+              //esta variable esta conectada con html, se actaualiza segun lo que escribamos en el input
+              inpText: ' ' //el texto que aparece al inicio en la variable 
+            }
+          }
+        })
+        app.mount('#app')
+      </script>
+
+</body>
+<footer>
+  <h2>INTEGRANTES:</h2>
+  <h3>MICHAEL ALEJANDRO PAPAMIJA PANTOJA</h3>
+  <h3>JHON FREDY GUERRA MAVISOY</h3>
+</footer>
+</html>

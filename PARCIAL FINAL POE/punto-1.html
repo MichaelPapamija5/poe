@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Punto 1</title>
+  <style>
+    #app {
+      display: inline-block;
+      padding: 10px;
+      font-size: x-large;
+      background-color: lightgreen;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Punto 1</h1>
+
+<div id="app">
+  <!-- Incluyendo el componente Saludo -->
+  <saludo></saludo>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<script>
+  // Definiendo el componente Saludo
+  const Saludo = {
+    data() {
+      return {
+        mensaje: "¡Hola, Mundo!"
+      };
+    },
+    template: '<p>{{ mensaje }}</p>'
+  };
+
+  // Creando la instancia Vue e incluyendo el componente Saludo
+  const app = Vue.createApp({
+    components: {
+      Saludo
+    }
+  });
+
+  // Montando la instancia Vue en el elemento con ID "app"
+  app.mount('#app');
+</script>
+
+</body>
+<footer>
+  <h2>INTEGRANTES:</h2>
+  <h3>MICHAEL ALEJANDRO PAPAMIJA PANTOJA</h3>
+  <h3>JHON FREDY GUERRA MAVISOY</h3>
+</footer>
+</html>
