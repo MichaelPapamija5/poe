@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Change Color</title>
+  <style>
+    #app {  /*cuadro de puntos*/
+      border: dashed black 1px;
+      width: 350px;
+      padding: 0 20px;
+    }
+    #app > div {
+      width: 200px; /*rectangulo que cambia de color*/
+      height: 80px;
+    }
+    #app span {
+      font-weight: bold; /*texto de porcentajes de color random*/
+      font-family: 'Courier New', Courier, monospace;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Example: Change Color</h1>
+
+<div id="app">
+  <p>Mueva el puntero del mouse sobre el cuadro a continuación para cambiar el color de fondo aleatoriamente con el código de color hsl.</p>
+  <div v-on:mousemove=" colorVal = Math.floor(Math.random()*360) " v-bind:style=" {backgroundColor: 'hsl('+colorVal+',60%,60%)'} "></div>
+  <p><span>backgroundColor: hsl(<strong>{{ colorVal }}</strong>, 80%, 80%)</span></p>
+  <p>To understand how to set a color in CSS with 'hsl()' see <a href="/css/css_colors_hsl.asp" target="_blank">our page about this</a>.</p>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        colorVal: 80 //valor numeral del color desado al inicio
+      }
+    }
+  })
+ app.mount('#app')
+</script>
+
+</body>
+<footer>
+  <h2>INTEGRANTES:</h2>
+  <h4>MICHAEL ALEJANDRO PAPAMIJA PANTOJA</h4>
+  <h4>JHON FREDY GUERRA MAVISOY</h4>
+</footer>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>v-bind background-color</title>
+  <style>
+    #app > div {
+      width: 200px;
+      padding: 20px;
+      border: dashed black 1px;
+    }
+    .myClass {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Example</h1>
+<p>'v-bind' is used to assign class with true/false.</p>
+<p>The browser set the 'myClass' class on the div tag when set to 'true'.</p>
+
+<div id="app">
+  <div v-bind:class="{ myClass: true }">
+    Importance visualized by background color
+  </div>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+   // La instancia de VEU esta vacia porque crea la clase directamente en el id="app"
+  })
+  app.mount('#app')
+</script>
+
+</body>
+<footer>
+  <h2>INTEGRANTES:</h2>
+  <h4>MICHAEL ALEJANDRO PAPAMIJA PANTOJA</h4>
+  <h4>JHON FREDY GUERRA MAVISOY</h4>
+</footer>
+</html>

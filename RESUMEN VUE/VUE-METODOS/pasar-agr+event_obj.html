@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Passing The Event Object + Other Argument</title>
+  <style>
+    #app {
+      border: dashed black 1px;
+      width: 180px;
+      padding: 10px;
+    }
+    #app img {
+      width: 100%;
+    }
+    #green {
+      background-color: lightgreen;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+<h1>En este ejemplo vemos que es posible enviar tanto el objeto evento como un texto como argumento con un método. Para ello debemos utilizar el nombre reservado para los métodos de eventos: '$event'..</p>
+<p>Click en la imagen del Tigre:</p>
+<div id="app">
+  <img src="https://www.w3schools.com/vue/img_tiger_square.jpeg" id="tiger" v-on:click="myMethod($event,'Hello')" width="733" height="733">
+  <p>Here is the message sent with the method, and the id of the img tag:</p>
+  <p id="green">"{{ msgAndId }}"</p> <!-- imprime el mensaje -->
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        msgAndId: '' //variable con mensaje vacio 
+      }
+    },
+    methods: {
+      myMethod(e,msg) { //trae el evento y el mensaje del v-on:click
+        this.msgAndId =  msg + ', ' //agrega una ',' desúe del mensaje el el metodo event
+        this.msgAndId += e.target.id //add despues de la ',' el nombre del "id" de la imagen
+      }
+    }
+  })
+ app.mount('#app')
+</script>
+
+</body>
+<footer>
+  <h2>INTEGRANTES:</h2>
+  <h4>MICHAEL ALEJANDRO PAPAMIJA PANTOJA</h4>
+  <h4>JHON FREDY GUERRA MAVISOY</h4>
+</footer>
+</html>

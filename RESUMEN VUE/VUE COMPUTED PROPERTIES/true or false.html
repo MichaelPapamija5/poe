@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Moose count</title>
+  <style>
+    form {
+      border: dashed black 1px;
+      display: inline-block;
+      padding: 10px;
+    }
+    label {
+      padding: 5px;
+    }
+    label:hover {
+      cursor: pointer;
+      background-color: lightgray;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Example: Data Property 'true' or 'false'</h1>
+<p>Esta es una función de formulario responsivo creada con Vue que brinda comentarios "verdaderos" o "falso" cuando el usuario marca la casilla de verificación.</p>
+<div id="app">
+  <form>
+    <p>
+      Important item?
+      <label>
+         <input type="checkbox" v-model="chbxVal"> 
+         {{ chbxVal }}
+      </label>
+    </p>
+  </form>
+</div>
+
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        chbxVal: false //cambia el texto del checkbosx segun su importancia
+      }
+    }
+  })
+ app.mount('#app')
+</script>
+
+</body>
+<footer>
+  <h2>INTEGRANTES:</h2>
+  <h4>MICHAEL ALEJANDRO PAPAMIJA PANTOJA</h4>
+  <h4>JHON FREDY GUERRA MAVISOY</h4>
+</footer>
+</html>

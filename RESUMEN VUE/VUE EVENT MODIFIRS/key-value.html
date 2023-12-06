@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Find Out Key Value</title>
+  <style>
+    #app {
+      border: black dashed 1px;
+      width: 200px;
+      padding: 0 20px 20px 20px;
+    }
+    #green {
+      background-color: lightgreen;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Example: Find The Keyboard Key Value</h1>
+
+<div id="app">
+  <p>Comience a escribir dentro del cuadro de texto para registrar el valor clave:</p>
+  <input type="text" v-on:keydown="getKey"> <!--trae la tecla-->
+  <p id="green">{{ keyValue }}</p> <!--imprime la tecla escrita-->
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        keyValue: '' //valor de la tecla esta vacio
+      }
+    },
+    methods: {
+      getKey(evt) { //trae  el evento y el metodo
+        this.keyValue = evt.key //se guarda la tecla que escribamos
+        console.log(evt.key) //la imprime en consola
+      }
+    }
+  })
+ app.mount('#app')
+</script>
+
+</body>
+<footer>
+  <h2>INTEGRANTES:</h2>
+  <h4>MICHAEL ALEJANDRO PAPAMIJA PANTOJA</h4>
+  <h4>JHON FREDY GUERRA MAVISOY</h4>
+</footer>
+</html>

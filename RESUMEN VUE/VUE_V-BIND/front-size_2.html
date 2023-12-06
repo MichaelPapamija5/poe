@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>v-bind font-size</title>
+  <style>
+    #app > div {
+      width: 200px;
+      padding: 20px;
+      border: dashed black 1px;
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<h1>'v-bind' Ejemplo de Font Size</h1>
+
+<p>The browser sets the font-size in pixels based on the 'size' number value in the Vue instance.</p>
+
+<div id="app">
+    <!-- Aquí se agregan los "px" en la variable -->
+  <div v-bind:style="{ fontSize: size + 'px' }">Texto de ejemplo</div>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+   data() {
+    return {
+        //no tiene "px"
+      size: 28
+    }
+   }
+  })
+  app.mount('#app')
+</script>
+
+</body>
+<footer>
+  <h2>INTEGRANTES:</h2>
+  <h4>MICHAEL ALEJANDRO PAPAMIJA PANTOJA</h4>
+  <h4>JHON FREDY GUERRA MAVISOY</h4>
+</footer>
+</html>

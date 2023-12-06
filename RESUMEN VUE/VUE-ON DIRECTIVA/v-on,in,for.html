@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Show Food Image</title>
+  <style>
+    #app {
+      border: dashed black 1px;
+      width: 220px;
+      padding: 20px;
+    }
+
+    #app > img {
+      float: right; /*qye sea hacia abajo*/
+      width: 55%;
+    }
+
+    li:hover { /*pasar el puntero por la lista*/
+      cursor: pointer;
+      background-color: rgb(224, 224, 224);
+    }
+
+    #app > ol { /*quitar adornos de la lista de los nombres de las comidas*/
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    #app li { /*estilo a la lista de nombres*/
+      padding-left: 5px;
+      border-radius: 6px;
+      width: 70px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Example: Show Food Image</h1>
+
+<p>Click en el nombre de la comida para traer su imagen</p>
+
+<div id="app">
+  <img v-bind:src="imgUrl"> 
+  <ol> <!--lista ordenada******* el '@' remplaza el "v-on"-->
+    <li v-for="food in manyFoods" @:click="imgUrl = food.url"> <!--cre un ciclo que al dar click al nombre de cada comida trae su imagen-->
+      {{ food.name }}
+    </li>
+  </ol>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        imgUrl: 'https://www.w3schools.com/vue/img_pizza.svg', //inicia con la imagen de la pizza
+        //vector de objetos con nombre y su imagen
+        manyFoods: [
+          {name: 'Burrito', url: 'https://www.w3schools.com/vue/img_burrito.svg'},
+          {name: 'Salad', url: 'https://www.w3schools.com/vue/img_salad.svg'},
+          {name: 'Cake', url: 'https://www.w3schools.com/vue/img_cake.svg'},
+          {name: 'Soup', url: 'https://www.w3schools.com/vue/img_soup.svg'},
+          {name: 'Fish', url: 'https://www.w3schools.com/vue/img_fish.svg'},
+          {name: 'Pizza', url: 'https://www.w3schools.com/vue/img_pizza.svg'},
+          {name: 'Rice', url: 'https://www.w3schools.com/vue/img_rice.svg'}
+      ]
+      }
+    }
+  })
+ app.mount('#app')
+</script>
+
+</body>
+<footer>
+  <h2>INTEGRANTES:</h2>
+  <h4>MICHAEL ALEJANDRO PAPAMIJA PANTOJA</h4>
+  <h4>JHON FREDY GUERRA MAVISOY</h4>
+</footer>
+</html>

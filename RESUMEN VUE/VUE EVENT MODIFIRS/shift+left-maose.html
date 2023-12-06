@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Click Shift Image</title>
+  <style>
+    #app {
+      border: black dashed 1px;
+      width: 200px;
+      padding: 20px;
+    }
+    #app > img {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Example</h1>
+
+<div id="app">
+  <p>Press the 'Shift' keyboard key while you do a left mouse button click on the image below to change it.</p>
+  <!--Al mantener presionado 'shift' y dar click a la imagen esta va a cambiar-->
+  <img v-on:click.left.shift="changeImg" v-bind:src="imgUrl">
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        imgUrlIndex : 0, //inicia el indice en cero
+        imgUrl: 'img_tiger_square.jpeg', //pone por defecto la imagen en el indice cero del vector (la primera)
+        images: [
+          'img_tiger_square.jpeg', //primera imagen=tigre
+          'img_moose_square.jpeg', //segunda imagen=alce
+          'img_kangaroo_square.jpeg' //tercera imagemn=canguro
+        ]
+      }
+    },
+    methods: {
+      changeImg() {
+        this.imgUrlIndex++; //aumenta el indice de uno en uno
+        if(this.imgUrlIndex>=3){ //compara que si el indice>3, regresa a la primera imagen 
+          this.imgUrlIndex=0
+        }
+        this.imgUrl = this.images[this.imgUrlIndex] //imprime la imagen segun si indice o pocision 
+      }
+    }
+  })
+ app.mount('#app')
+</script>
+
+</body>
+<footer>
+  <h2>INTEGRANTES:</h2>
+  <h4>MICHAEL ALEJANDRO PAPAMIJA PANTOJA</h4>
+  <h4>JHON FREDY GUERRA MAVISOY</h4>
+</footer>
+</html>

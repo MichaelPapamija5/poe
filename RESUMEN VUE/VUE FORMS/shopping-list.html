@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shopping List</title>
+  <style>
+    form {
+      border: dashed black 1px;
+      width: 200px;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Example: Shopping List</h1>
+<div id="app">
+    <!-- este prevent evita que los articulos se agreguen solos, debemos presionar el boton para agergar-->
+  <form v-on:submit.prevent="addItem"> 
+    <p>
+      Que necesitas?
+      <!-- El 'v-model' conecta las entradas -->
+      <input type="text" required placeholder="item name.." v-model="itemName">
+    </p>
+    <p>
+      Cuantos?
+      <input type="number" placeholder="number of items.." v-model="itemNumber">
+    </p>
+    <!--boton para agregar-->
+    <button type="submit">Add item</button>
+  </form>
+
+  <div>
+    <p>Shopping list:</p>
+    <ul> <!-- Ciclo 'for' para imprimir en una lista cada articulo agregado -->
+      <li v-for="item in shoppingList">{{ item.name }}, {{ item.number}}</li>
+    </ul>
+  </div>
+</div>
+
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        itemName: null,
+        itemNumber: null,
+        shoppingList: [ //vector en el que se agregan los articulos
+          { name: 'Tomatoes', number: 5 }
+        ]
+      }
+    },
+    methods: { // método que agrega el artículo a la lista de compras y borra el formulario
+      addItem(){ //evento para agregar items
+        let item = { 
+          name: this.itemName,
+          number: this.itemNumber
+        }
+        this.shoppingList.push(item) //agrega al vector con el 'push(item)'
+        this.itemName = null
+        this.itemNumber = null  
+      }
+    }
+  })
+ app.mount('#app')
+</script>
+
+</body>
+<footer>
+  <h2>INTEGRANTES:</h2>
+  <h4>MICHAEL ALEJANDRO PAPAMIJA PANTOJA</h4>
+  <h4>JHON FREDY GUERRA MAVISOY</h4>
+</footer>
+</html>

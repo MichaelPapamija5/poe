@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Camel case vs kebab case with 'v-bind:style'</title>
+  <style>
+    .impClass {
+      font-weight: bolder;
+    }
+    .yelClass {
+      background-color: rgb(255, 255, 139);
+    }
+    #app > div {
+      border: dashed black 1px;
+      width: 200px;
+      margin: 20px;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Example: Array Syntax with 'v-bind:class'</h1>
+<p>La clase 'yelClass' se adjunta al elemento div y la clase 'impClass' se adjunta si la propiedad 'isImportant' es 'true'</p>
+<div id="app">
+    <!--Solo cambia el texto si es importante-->
+  <div v-bind:class="[{ impClass: isImportant }, 'yelClass' ]">
+    This div tag belongs to one or two classes depending on the isImportant property.
+  </div>
+</div>
+
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        isImportant: true //cambia si es 'false' o 'true'
+      }
+    }
+  })
+ app.mount('#app')
+</script>
+
+</body>
+<footer>
+  <h2>INTEGRANTES:</h2>
+  <h4>MICHAEL ALEJANDRO PAPAMIJA PANTOJA</h4>
+  <h4>JHON FREDY GUERRA MAVISOY</h4>
+</footer>
+</html>

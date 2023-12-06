@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Two-way Binding</title>
+  <style>
+    #app {
+      border: black dashed 1px;
+      width: 200px;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+    <!-- Enlace Bidireccional -->
+<h1>Example: Two-way Binding</h1>
+<p>La propiedad inpText está vinculada de dos maneras: desde el elemento de entrada a la propiedad Vue y desde la propiedad Vue al elemento de entrada.</p>
+<p>Intente cambiar el campo de entrada y vea cómo se actualiza el valor de la propiedad Vue. Intente también cambiar el valor de la propiedad InnerText dentro del código, haga clic en 'Ejecutar' y vea cómo cambia el valor de los elementos de entrada. <a href=""></a></p>
+<div id="app">
+  <input type="text" v-model="inpText">
+  <p>inpText value: "{{ inpText }}" </p> <!--imprime lo que ecribamos en el input-->
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        //esta variable esta conectada con html, se actaualiza segun lo que escribamos en el input
+        inpText: 'Initial text' //el texto que aparece al inicio en la variable 
+      }
+    }
+  })
+  app.mount('#app')
+</script>
+
+</body>
+<footer>
+  <h2>INTEGRANTES:</h2>
+  <h4>MICHAEL ALEJANDRO PAPAMIJA PANTOJA</h4>
+  <h4>JHON FREDY GUERRA MAVISOY</h4>
+</footer>
+</html>

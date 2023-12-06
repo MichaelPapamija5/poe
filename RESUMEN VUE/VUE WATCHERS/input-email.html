@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Input for e-mail Address</title>
+  <style>
+    #app {
+      border: dashed black 1px;
+      width: 200px;
+      padding: 0 10px 10px 10px;
+    }
+    #app > div {
+      width: 200px;
+      height: 50px;
+      border: solid black 1px;
+      background-color: lightgreen;
+    }
+    #app > p {
+      font-size: large;
+      font-weight: bold;
+    }
+    .valid { /*color del texto si el correo es cvalido*/
+      color: green;
+    }
+    .invalid {/*color del texto si el correo es invalido*/
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Example: Input for e-mail Address</h1>
+<p>Se configura un observador para observar la entrada de correo electrónico. Se informa al usuario si la dirección de correo electrónico actual ingresada es válida o no (falta @).</p>
+<p>También se informa al usuario si la entrada acaba de ser válida con la última entrada desde el teclado..</p>
+<div id="app">
+  <label>
+    <p>Type a valid e-mail address:</p>
+    <input type="email" v-model="inpAddress">
+  </label>
+  <p v-bind:class="myClass"><code>{{ feedbackText }}</code></p> 
+</div>
+
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        inpAddress: '',
+        feedbackText: '',//mensaje si es o no valido
+        myClass: 'invalid'
+      }
+    },
+    watch: {
+      inpAddress(newVal,oldVal) {
+        if(!newVal.includes('@')){ //compara si el email tiene '@'
+          this.feedbackText = 'The e-mail address is NOT valid';
+          this.myClass = 'invalid';
+        }
+        else if(!oldVal.includes('@') && newVal.includes('@')) {//compara si el email tiene '@'
+          this.feedbackText = 'Perfect! You fixed it!';
+          this.myClass = 'valid'
+        }
+        else {
+          this.feedbackText = 'The e-mail address is valid :)';
+        }
+      }
+    }
+  })
+ app.mount('#app')
+</script>
+
+</body>
+<footer>
+  <h2>INTEGRANTES:</h2>
+  <h4>MICHAEL ALEJANDRO PAPAMIJA PANTOJA</h4>
+  <h4>JHON FREDY GUERRA MAVISOY</h4>
+</footer>
+</html>

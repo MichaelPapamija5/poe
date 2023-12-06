@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Range Watcher</title>
+  <style>
+    #app {
+      border: dashed black 1px;
+      display: inline-block;
+      padding: 10px;
+    }
+    #app > p {
+      font-size: large;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Example: Range Watcher</h1>
+<p>A watcher is used for the 'rangeVal' value so that values between 20 and 60 are not possible to choose.</p>
+<div id="app">
+    <!--le da un rango maximo y minimo-->
+  <input type="range" min="0" max="100" step="1" v-model="rangeVal">
+  <p><code>{{ rangeVal }}</code></p> <!--Imorime el valor del rango-->
+</div>
+
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        rangeVal: 70 //inicia con un valor de 70
+      }
+    },
+    watch: {
+      rangeVal(val) { //trae el rango
+        if( val>20 && val<60 ){ // si el valor es uno de esos rangos da un dalto 40 
+          if(val<40){ //
+            this.rangeVal = 20;
+          }
+          else{
+            this.rangeVal = 60;
+          }
+        }
+      }
+    }
+  })
+ app.mount('#app')
+</script>
+
+</body>
+<footer>
+  <h2>INTEGRANTES:</h2>
+  <h4>MICHAEL ALEJANDRO PAPAMIJA PANTOJA</h4>
+  <h4>JHON FREDY GUERRA MAVISOY</h4>
+</footer>
+</html>

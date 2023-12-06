@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My first Vue page</title>
+  <style>
+    #app > div {
+      border: solid black 1px;
+      width: 80%;
+      padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    img {
+      width: 70px;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Example 'v-for' to create images</h1>
+<p>The 'v-for' directive is used to create images based on the 'manyFoods' array in the Vue instance.</p>
+
+<div id="app">
+
+  <div>
+    <!-- el v-bind imprime las imagenes de la matriz -->
+    <img v-for="x in manyFoods" v-bind:src="x">
+  </div>
+
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<script>
+  const app = Vue.createApp({
+   data() {
+    return {
+        //matriz
+      manyFoods: [
+        'img_burrito.svg',
+        'img_salad.svg',
+        'img_cake.svg',
+        'img_soup.svg',
+        'img_fish.svg',
+        'img_pizza.svg',
+        'img_rice.svg'
+      ]
+    }
+   }
+  })
+  
+  app.mount('#app')
+
+</script>
+
+</body>
+<footer>
+  <h2>INTEGRANTES:</h2>
+  <h4>MICHAEL ALEJANDRO PAPAMIJA PANTOJA</h4>
+  <h4>JHON FREDY GUERRA MAVISOY</h4>
+</footer>
+</html>

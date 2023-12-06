@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mouse Pointer Position</title>
+  <style>
+    #app {
+      border: black dashed 1px;
+      width: 200px;
+      padding: 0 20px 20px 20px;
+    }
+    #app > div {
+      width: 160px;
+      height: 80px;
+      background-color: lightcoral;
+      padding: 20px;
+    }
+    #app span {
+      font-weight: bold;
+      font-family: 'Courier New', Courier, monospace;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Example: Mouse Pointer Position</h1>
+
+<div id="app">
+  <p>Move the mouse pointer over the box below:</p>
+  <div v-on:mousemove="mousePos"> <!--evento de pasar-mouse-->
+    <span>xPos: {{ xPos }}</span><br><span>yPos: {{ yPos }}</span> <!--imprime el valor de la posicion en x.y-->
+  </div>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        xPos: 0,  //inicia las pos x,y en cero
+        yPos: 0
+      }
+    },
+    methods: {
+      mousePos(event) { //recibe el evento
+        //al relizar el evento por  la caja, obtiene su posicion
+        this.xPos = event.offsetX  
+        this.yPos = event.offsetY
+      }
+    }
+  })
+ app.mount('#app')
+</script>
+
+</body>
+<footer>
+  <h2>INTEGRANTES:</h2>
+  <h4>MICHAEL ALEJANDRO PAPAMIJA PANTOJA</h4>
+  <h4>JHON FREDY GUERRA MAVISOY</h4>
+</footer>
+</html>

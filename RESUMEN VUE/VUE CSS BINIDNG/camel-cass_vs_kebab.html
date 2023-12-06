@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Camel case vs kebab case with 'v-bind:style'</title>
+  <style>
+    #app > div {
+      border: dashed black 1px;
+      width: 200px;
+      margin: 20px;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Example: Camel case vs kebab case with 'v-bind:style'</h1>
+<p>Tanto la notación en caso de camello como la notación en caso de kebab entre comillas se pueden usar para nombres de propiedades CSS con 'v-bind:style', pero se recomienda el uso en mayúsculas y minúsculas.</p>
+<div id="app">
+    <!--Le da el estilo directamente-->
+  <div v-bind:style="{ backgroundColor: 'lightpink', 'font-weight': 'bolder' }">
+    This div tag has pink background and bold text.
+  </div>
+</div>
+
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        // no cambia nada si es verdadero o falso
+        isYellow: true,
+        isImportant: false
+      }
+    }
+  })
+ app.mount('#app')
+</script>
+
+</body>
+<footer>
+  <h2>INTEGRANTES:</h2>
+  <h4>MICHAEL ALEJANDRO PAPAMIJA PANTOJA</h4>
+  <h4>JHON FREDY GUERRA MAVISOY</h4>
+</footer>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Count Input Events</title>
+  <style>
+    #app {
+      border: dashed black 1px;  /*style de cuadro*/
+      width: 200px;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Example: Count Input Events</h1>
+
+<div id="app">
+  <input type="text" v-on:input="inpCount++" placeholder="Start writing.."> <!--especifica que sea tipo text que v-on:cuente los string-->
+  <p>{{ 'Input events occured: '+inpCount }}</p> <!-- {{'str imprimir' +contador de strings}} -->
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        inpCount: 0  //inicia en cero
+      }
+    }
+  })
+ app.mount('#app')
+</script>
+
+</body>
+<footer>
+  <h2>INTEGRANTES:</h2>
+  <h4>MICHAEL ALEJANDRO PAPAMIJA PANTOJA</h4>
+  <h4>JHON FREDY GUERRA MAVISOY</h4>
+</footer>
+</html>

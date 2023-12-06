@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multiple Classes with 'v-bind:class'</title>
+  <style>
+    .impClass { /*Pone en negrita si la variable es falsa*/
+      font-weight: bolder;
+    }
+    .yelClass {
+      background-color: rgb(255, 255, 136);
+    }
+    #app > div {
+      border: dashed black 1px;
+      width: 200px;
+      margin: 20px;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Example: Assigning Multiple Classes with 'v-bind:class'</h1>
+<p>Multiple classes can easily be assigned in Vue simply by separating the classes with comma.</p>
+<div id="app">
+  <div v-bind:class="{ yelClass: isYellow, impClass: isImportant }">This can belong to both 'impClass' and 'yelClass' depending an the 'isYellow' and 'isImportant' Vue properties.</div>
+</div>
+
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        isYellow: true,
+        //si es false, pone en negrita el texto
+        isImportant: true //cambia el estio del texto segun la importancia
+      }
+    }
+  })
+ app.mount('#app')
+</script>
+
+</body>
+<footer>
+  <h2>INTEGRANTES:</h2>
+  <h4>MICHAEL ALEJANDRO PAPAMIJA PANTOJA</h4>
+  <h4>JHON FREDY GUERRA MAVISOY</h4>
+</footer>
+</html>

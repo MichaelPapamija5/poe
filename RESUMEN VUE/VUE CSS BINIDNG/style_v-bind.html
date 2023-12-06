@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>'class' and 'v-bind:class'</title>
+  <style>
+    .impClass {
+      font-weight: bolder;
+    }
+    .yelClass { /*Le da el color a la clase*/
+      background-color: rgb(255, 255, 136);
+    }
+    #app > div {
+      border: dashed black 1px;
+      width: 200px;
+      margin: 20px;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Example: 'class' and 'v-bind:class'</h1>
+<p>La clase 'impClass' se configura de la forma normal con el atributo class y la clase 'yelClass' se configura con v-bind:class. El resultado es que Vue fusiona las clases para que el elemento div pertenezca a ambas clases.</p>
+<div id="app">
+  <div class="impClass" v-bind:class="{ yelClass: isYellow }">This div belongs to both 'impClass' and 'yelClass'.</div>
+</div>
+
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        isYellow: true //dice que 'yelClass'==='isYellow'
+        //le da el color desde 'CSS'
+      }
+    }
+  })
+ app.mount('#app')
+</script>
+
+</body>
+<footer>
+  <h2>INTEGRANTES:</h2>
+  <h4>MICHAEL ALEJANDRO PAPAMIJA PANTOJA</h4>
+  <h4>JHON FREDY GUERRA MAVISOY</h4>
+</footer>
+</html>

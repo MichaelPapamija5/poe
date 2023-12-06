@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>v-bind font-size</title>
+  <style>
+    #app > div {
+      width: 200px;
+      padding: 20px;
+      border: dashed black 1px;
+      background-color: lightcoral;
+    }
+  </style>
+</head>
+<body>
+
+<h1>'v-bind' Ejemplo de Font Size</h1>
+
+<p>The browser sets the font-size based on the value of 'size' in the Vue instance.</p>
+
+<div id="app">
+  <div v-bind:style="{ fontSize: size }">Ejemplo</div>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+   data() {
+    return {
+        //tamaño de letra, llama la var=size
+      size: '28px'
+    }
+   }
+  })
+  app.mount('#app')
+</script>
+
+</body>
+<footer>
+  <h2>INTEGRANTES:</h2>
+  <h4>MICHAEL ALEJANDRO PAPAMIJA PANTOJA</h4>
+  <h4>JHON FREDY GUERRA MAVISOY</h4>
+</footer>
+</html>

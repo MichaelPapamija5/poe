@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    /* llama la clase de VEU y le da color  */
+    .pinkBG {
+      background-color: lightpink;
+    }
+  </style>
+</head>
+<body>
+
+    <!--crea una clase en el #app-->
+  <div id="app">
+    <div v-bind:class="vueClass"></div>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <!--INSTANCIA-->
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          vueClass: "pinkBG"
+        }
+      }
+    })
+    app.mount('#app')
+  </script>
+</body>
+<footer>
+  <h2>INTEGRANTES:</h2>
+  <h4>MICHAEL ALEJANDRO PAPAMIJA PANTOJA</h4>
+  <h4>JHON FREDY GUERRA MAVISOY</h4>
+</footer>
+</html>

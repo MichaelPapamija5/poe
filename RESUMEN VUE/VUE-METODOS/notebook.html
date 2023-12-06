@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Notebook Example</title>
+  <style>
+    #app {
+      border: black dashed 1px;
+      width: 300px;
+      padding: 20px;
+    }
+    #app > div { /*estilo  en la imagen del libro*/
+      width: 100%;
+      position: relative;
+      margin-top: 10px;
+      aspect-ratio: 1;
+      background-image: url("https://thumbs.dreamstime.com/z/bloc-de-notas-tapa-dura-abierto-en-blanco-con-l%C3%ADneas-para-escribir-imagen-cierre-libro-aislado-fondo-177231556.jpg");
+      background-size: 340%;
+      background-position: -345px 0;
+      overflow: hidden;
+    }
+    #app span {
+      width: 80%;
+      font-weight: bold;
+      font-family: 'Courier New', Courier, monospace;
+      line-height: 1.2em;
+      transform-origin: 0 0;
+      rotate: 0deg; /*direccion del texto en la imagen*/
+      position: absolute;
+      top: 72px;
+      left: 70px;
+    }
+    #app textarea {
+      width: 100%;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Example: Notebook</h1>
+
+<div id="app">
+    <!--Evento writeText===escribir -->
+  <textarea v-on:input="writeText" rows="8" cols="30" placeholder="Start writing.."></textarea>
+  <div>
+    <span>{{ text }}</span> <!--imprime lo que voy escribiendo-->
+  </div>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        text: '' //vacio
+      }
+    },
+    methods: {
+      writeText(event) {
+        this.text = event.target.value //al escribir en el cuadro lleve cada pababra a la imagen del libro
+      }
+    }
+  })
+ app.mount('#app')
+</script>
+
+</body>
+<footer>
+  <h2>INTEGRANTES:</h2>
+  <h4>MICHAEL ALEJANDRO PAPAMIJA PANTOJA</h4>
+  <h4>JHON FREDY GUERRA MAVISOY</h4>
+</footer>
+</html>

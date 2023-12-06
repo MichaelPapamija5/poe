@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Select images</title>
+  <style>
+    #app {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      width: 80%;
+      border: dashed black 1px;
+    }
+    #app > div {
+      display: block;
+      flex-basis: 80px;
+      aspect-ratio: 1;
+      margin: 5px;
+    }
+    div > img {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 3px;
+      border: solid white 4px;
+      border-radius: 5px;
+    }
+    img:hover {
+      cursor: pointer;
+    }
+    .selClass {
+      border: solid brown 4px;
+      background-color: lightpink;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Example: Selecting images with v-bind:class</h1>
+<p>This is an example of assigning a class with Vue (v-bind:class).</p>
+<p>Click on an image to assign or remove the class "selClass".</p>
+<div id="app">
+  <div v-for="(img, index) in images"> <!--ciclo para recorrer las imagenes segun si indice-->
+    <!--Agrega las imagegenes y con el metodo 'on-click' nos permite seleccionar el indice de la imagen-->
+    <img v-bind:src="img.url" v-on:click="select(index)" v-bind:class="{selClass: img.sel}">
+  </div>
+</div>
+
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        images: [ //array que guarda imagene en un objeto
+          {url: 'https://www.w3schools.com/vue/img_burrito.svg', sel: false},//pone la imagen que no esta seleccionada
+          {url: 'https://www.w3schools.com/vue/img_salad.svg', sel: false},
+          {url: 'https://www.w3schools.com/vue/img_cake.svg', sel: false},
+          {url: 'https://www.w3schools.com/vue/img_soup.svg', sel: false},
+          {url: 'https://www.w3schools.com/vue/img_fish.svg', sel: false},
+          {url: 'https://www.w3schools.com/vue/img_pizza.svg', sel: false},
+          {url: 'https://www.w3schools.com/vue/img_rice.svg', sel: false}
+        ]
+      }
+    },
+    methods: {
+      select(number) { //metodo seleccionar
+        this.images[number].sel = !this.images[number].sel //la imagen a la que demos click se pone roja
+      }
+    }
+  })
+ app.mount('#app')
+</script>
+
+</body>
+<footer>
+  <h2>INTEGRANTES:</h2>
+  <h4>MICHAEL ALEJANDRO PAPAMIJA PANTOJA</h4>
+  <h4>JHON FREDY GUERRA MAVISOY</h4>
+</footer>
+</html>

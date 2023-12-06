@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mouse Pointer Position Change</title>
+  <style>
+    #app {
+      border: dashed black 1px;
+      display: inline-block;
+      padding: 10px;
+    }
+    #app > div {
+      width: 200px;
+      height: 50px;
+      border: solid black 1px;
+      background-color: lightgreen;
+    }
+    #app > p {
+      font-size: large;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Example: Mouse Pointer Position Change</h1>
+<p>To see the difference in mouse pointer position from one click event to the next we can subtract the old x-position from the new x-position.</p>
+<div id="app">
+    <!--permite ver la posicion en donde demos clic en el rectangulo de color verde-->
+  <div v-on:click="updatePos"></div>
+  <p><code>{{ xDiff }}</code></p> 
+</div>
+
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        xPos: 0,
+        xDiff: 0
+      }
+    },
+    watch: {
+      xPos(newVal,oldVal) { //deja ver la posicion segun el click
+        this.xDiff = newVal-oldVal
+      }
+    },
+    methods: {
+      updatePos(evt) { //evento para saber la posicion 
+        this.xPos = evt.offsetX
+      }
+    }
+  })
+ app.mount('#app')
+</script>
+
+</body>
+<footer>
+  <h2>INTEGRANTES:</h2>
+  <h4>MICHAEL ALEJANDRO PAPAMIJA PANTOJA</h4>
+  <h4>JHON FREDY GUERRA MAVISOY</h4>
+</footer>
+</html>

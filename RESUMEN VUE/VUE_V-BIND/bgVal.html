@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>v-bind background-color</title>
+  <style>
+    #app > div {
+      width: 200px;
+      padding: 20px;
+      border: dashed black 1px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Example: 'v-bind' con Background Color Condicional</h1>
+
+<p>Este navegador establece el background color con 'hsl()' basado en el valor de 'bgVal' en la instancia de Vue.</p>
+
+<div id="app">
+  <div v-bind:style="{ backgroundColor: isImportant ? 'lightcoral' : 'lightgray' }">Importancia basada en background color</div>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+   data() {
+    return {
+        //el color cambia si es "true" o "false"
+        // Aqí pone que es verdadero y pone el color de fondo correspondiente
+      isImportant: true
+    }
+   }
+  })
+  app.mount('#app')
+</script>
+
+</body>
+<footer>
+  <h2>INTEGRANTES:</h2>
+  <h4>MICHAEL ALEJANDRO PAPAMIJA PANTOJA</h4>
+  <h4>JHON FREDY GUERRA MAVISOY</h4>
+</footer>
+</html>

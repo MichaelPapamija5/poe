@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        #app {
+          border: dashed black 1px;
+          width: 250px;
+          padding: 0 10px 10px 10px;
+        }
+    
+        img {
+          width: 100%;
+        }
+      </style>
+
+</head>
+<body>
+    
+    <div id="app">
+        <!-- enlaza una imagen -->
+        <p>Prueba para enlazar una imagen en VEU usando "v-bind"</p>
+        <img v-bind:src="url">
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+     <!--INSTANCIA-->
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          url: "https://imgs.search.brave.com/wpFsPS0PzOoFuNMyLD9BggyFCADsvQtEhoKc2wkK4vU/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9taXJv/Lm1lZGl1bS5jb20v/djIvMSpSWUNqbi1s/M0lUWDN5cEs1alVo/Nk1nLnBuZw"
+        }
+      }
+    })
+    app.mount('#app')
+  </script>
+
+</body>
+<footer>
+  <h2>INTEGRANTES:</h2>
+  <h4>MICHAEL ALEJANDRO PAPAMIJA PANTOJA</h4>
+  <h4>JHON FREDY GUERRA MAVISOY</h4>
+</footer>
+</html>
